@@ -1,0 +1,26 @@
+@import url('./layout.css');
+@import url('./home.css');
+@import url('./recipes.css');
+@import url('./addRecipe.css');
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #EEE;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+label {
+    display: block;
+    margin: 8px 4px;
+}
