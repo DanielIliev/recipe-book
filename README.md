@@ -22,8 +22,8 @@
 ## Technology Stack
 ### Client side
 - HTML5 / CSS3
-- Page (for the client side routing)
-- Lit-html for the html templates
+- Page JS
+- Lit-html
 - Google Material Icons
 
 ### Server side
