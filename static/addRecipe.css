@@ -1,0 +1,16 @@
+#recipes > .recipe-block {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 16px 8px;
+    border: 1px solid #ccc;
+    border-radius: 1%;
+    padding: 8px;
+    background-color: #ddd;
+}
+
+#recipes > .recipe-block > .recipe-content {
+    margin-right: auto;
+    justify-content: flex-end;
+    list-style: none;
+    align-items: center;
+}
