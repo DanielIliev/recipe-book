@@ -1,4 +1,4 @@
-import page from '../node_modules/page/page.mjs';
+import page from '../../node_modules/page/page.mjs';
 import { render } from '../../node_modules/lit-html/lit-html.js';
 import { layoutView } from './views/layoutView.js';
 import { deleteRecipe } from './data/recipeModel.js';

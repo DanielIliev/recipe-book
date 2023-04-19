@@ -1,4 +1,4 @@
-import { html } from '../../node_modules/lit-html/lit-html.js';
+import { html } from '../../../node_modules/lit-html/lit-html.js';
 
 export const aboutTemplate = () => html`
     <h1>A simple recipe book where you can add your favorite recipes</h1>

@@ -1,4 +1,4 @@
-import { html } from '../../node_modules/lit-html/lit-html.js';
+import { html } from '../../../node_modules/lit-html/lit-html.js';
 import { recipeBlock } from '../partials/recipeBlock.js';
 
 export const recipesTemplate = (recipes) => html`

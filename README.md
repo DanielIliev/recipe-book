@@ -31,6 +31,9 @@
 - Mongoose
 - MongoDB
 
+### Additional tools
+- Webpack for JS modules bundling
+
 ## Future features (not confirmed)
 - User register
 - User login

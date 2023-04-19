@@ -2,11 +2,11 @@ import { del, get, post, put } from "./api.js";
 
 const endpoints = {
     all: '/recipes',
+    latest: '/latest',
     byId: '/recipe/',
     add: '/recipes/add',
     edit: '/recipes/edit',
     del: '/recipes/delete/',
-    latest: '/'
 };
 
 export async function getAllRecipes() {
