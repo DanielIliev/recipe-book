@@ -40,3 +40,14 @@
 - User session
 - Search
 - Views for guest / logged in user
+
+## How to start the application locally
+### Prerequisites
+- NodeJS v16.15.1
+- MongoDB v6.0.4
+
+### Steps
+- Clone the project into your desired directory
+- Run npm install in the root folder
+- Run npm start
+- Visit http://localhost:3000
