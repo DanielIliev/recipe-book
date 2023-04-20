@@ -12,7 +12,7 @@
 ### Edit
 ### Delete
 
-### Architecture
+## Architecture
 - App entry point (initialize libraries and modules, dispatch navigation)
 - Request modules
 - Data CRUD
