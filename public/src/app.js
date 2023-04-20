@@ -37,6 +37,10 @@ function renderView(content) {
 }
 
 async function deleteAction(ctx) {
-    await deleteRecipe(ctx.params.id);
-    ctx.page.redirect('/recipes');
+    const confirmation = confirm('Are you sure ?');
+
+    if (confirmation == true) {
+        await deleteRecipe(ctx.params.id);
+        ctx.page.redirect('/recipes');
+    }
 }
