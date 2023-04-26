@@ -9,7 +9,7 @@ export const editRecipeTemplate = (recipe, onEdit) => html`
             <label>
                 Description: <textarea name="description" .value="${recipe.description}"></textarea>
             </label>
-            <button type="submit">Publish</button>
+            <button type="submit">Edit</button>
         </form>
     </div>
 `;

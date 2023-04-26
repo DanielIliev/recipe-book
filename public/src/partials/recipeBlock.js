@@ -4,14 +4,10 @@ export const recipeBlock = (recipe) => html`
     <div class="recipe-block">
         <div class="recipe-actions">
             <a href="/recipes/edit/${recipe._id}">
-                <span class="material-symbols-outlined">
-                    edit_square
-                </span>
+                <img src="../../images/icons/edit.svg" alt="options" />
             </a>
             <a href="/recipes/delete/${recipe._id}">
-                <span class="material-symbols-outlined">
-                    delete
-                </span>
+                <img src="../../images/icons/delete.svg" alt="options" />
             </a>
         </div>
         <div class="recipe-content">
