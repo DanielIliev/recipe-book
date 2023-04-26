@@ -28,7 +28,7 @@ page.start();
 
 function decorator(ctx, next) {
     ctx.render = renderView;
-    
+
     next();
 }
 
@@ -38,9 +38,16 @@ function renderView(content) {
 
 async function deleteAction(ctx) {
     const confirmation = confirm('Are you sure ?');
+    const invokeLocation = location.pathname;
 
     if (confirmation == true) {
         await deleteRecipe(ctx.params.id);
         ctx.page.redirect('/recipes');
+    } else {
+        if (invokeLocation === '/') {
+            ctx.page.redirect('/')
+        } else if (invokeLocation === '/recipes') {
+            ctx.page.redirect('/recipes');
+        }
     }
 }

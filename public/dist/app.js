@@ -84,7 +84,7 @@
             <button type="submit">Edit</button>
         </form>
     </div>
-`))})),R("/recipes/delete/:id",(async function(t){1==confirm("Are you sure ?")&&(await async function(t){await mt(`${bt}?id=${t}`)}(t.params.id),t.page.redirect("/recipes"))})),R("/about",(function(t){t.render(J`
+`))})),R("/recipes/delete/:id",(async function(t){const e=confirm("Are you sure ?"),i=location.pathname;1==e?(await async function(t){await mt(`${bt}?id=${t}`)}(t.params.id),t.page.redirect("/recipes")):"/"===i?t.page.redirect("/"):"/recipes"===i&&t.page.redirect("/recipes")})),R("/about",(function(t){t.render(J`
     <h1>A simple recipe book where you can add your favorite recipes</h1>
     <h2>Project author: Daniel Iliev</h2>
     <hr>
