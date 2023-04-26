@@ -1,17 +1,18 @@
 import { html } from '../../../node_modules/lit-html/lit-html.js';
+import { localeEnglish } from '../data/localization.js';
 import { recipeBlock } from '../partials/recipeBlock.js';
 
 export const homeTemplate = (recipes) => html`
     <section id="home">
-        <h1>Welcome to the Recipe Book!</h1>
+        <h1>${localeEnglish.home.title}</h1>
         <hr>
         ${recipes.length !== 0 ? html`
-            <h3>Latest recipes added are...</h3>
+            <h3>${localeEnglish.home.description}</h3>
                 ${recipes.map((recipe) => html`
                     ${recipeBlock(recipe)}
                 `)}
         ` : html`
-            <h2>There are no recipes :(</h2>
+            <h2>${localeEnglish.home.noRecipes}</h2>
         `}
     </section>
 `;

@@ -1,4 +1,5 @@
 import { html } from '../../../node_modules/lit-html/lit-html.js';
+import { localeEnglish } from '../data/localization.js';
 
 export const recipeBlock = (recipe) => html`
     <div class="recipe-block">
@@ -11,9 +12,9 @@ export const recipeBlock = (recipe) => html`
             </a>
         </div>
         <div class="recipe-content">
-            <h1>Recipe: ${recipe.title}</h1>
-            <p>How to: ${recipe.description}</p>
-            <p>Author: ${recipe.author}</p>
+            <h1>${localeEnglish.recipeBlock.title} ${recipe.title}</h1>
+            <p>${localeEnglish.recipeBlock.description} ${recipe.description}</p>
+            <p>${localeEnglish.recipeBlock.author} ${recipe.author}</p>
         </div>
     </div>
 `;

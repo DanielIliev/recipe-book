@@ -1,15 +1,16 @@
 import { html } from '../../../node_modules/lit-html/lit-html.js';
+import { localeEnglish } from '../data/localization.js';
 
 export const addRecipeTemplate = (onAdd) => html`
     <div class="addForm">
         <form id="add-recipe" @submit="${onAdd}">
             <label>
-                Title: <input type="text" name="title">
+                ${localeEnglish.addRecipe.title} <input type="text" name="title">
             </label>
             <label>
-                Description: <textarea name="description"></textarea>
+                ${localeEnglish.addRecipe.description} <textarea name="description"></textarea>
             </label>
-            <button type="submit">Publish</button>
+            <button type="submit">${localeEnglish.addRecipe.publish}</button>
         </form>
     </div>
 `;
