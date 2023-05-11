@@ -8,8 +8,7 @@ const localeEnglish = {
     },
     home: {
         title: 'Welcome to the Recipe Book!',
-        description: 'These are the latest recipes',
-        noRecipes: 'There are no recipes :('
+        description: 'This application can be used to add, edit or delete recipe records.',
     },
     recipes: {
         title: 'These are the available recipes',
@@ -26,7 +25,7 @@ const localeEnglish = {
         edit: 'Edit'
     },
     recipeBlock: {
-        title: 'Recipe:',
+        title: 'Title:',
         description: 'How to:',
         author: 'Author:'
     },

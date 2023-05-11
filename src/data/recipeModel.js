@@ -11,8 +11,12 @@ const endpoints = {
 export async function getRecipes() {
     const database = getDatabase();
     const data = await get(child(ref(database), endpoints.all));
-
-    return data.val();
+    
+    if (data.val()) {
+        return Object.values(data.val());
+    } else {
+        return [];
+    }
 }
 
 // export async function getLatestRecipes() {

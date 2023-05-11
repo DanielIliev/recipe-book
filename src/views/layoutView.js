@@ -6,9 +6,6 @@ export const layoutView = (content) => html`
         <a href="/" id="brand">${localeEnglish.navigation.logoLinkText}</a>
         <ul>
             <li>
-                <a href="/">${localeEnglish.navigation.homeLinkText}</a>
-            </li>
-            <li>
                 <a href="/add">${localeEnglish.navigation.addLinkText}</a>
             </li>
             <li>
