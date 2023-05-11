@@ -1,8 +1,8 @@
-import { getLatestRecipes } from "../data/recipeModel.js";
+import { getRecipes } from "../data/recipeModel.js";
 import { homeTemplate } from "../views/homeView.js";
 
 export async function homeController(ctx) {
-    const recipes = await getLatestRecipes();
+    const recipes = Object.values(await getRecipes());
 
     ctx.render(homeTemplate(recipes));
 }

@@ -1,4 +1,4 @@
-import { html } from '../../../node_modules/lit-html/lit-html.js';
+import { html } from 'lit-html';
 import { localeEnglish } from '../data/localization.js';
 
 export const layoutView = (content) => html`
@@ -9,7 +9,7 @@ export const layoutView = (content) => html`
                 <a href="/">${localeEnglish.navigation.homeLinkText}</a>
             </li>
             <li>
-                <a href="/recipes/add">${localeEnglish.navigation.addLinkText}</a>
+                <a href="/add">${localeEnglish.navigation.addLinkText}</a>
             </li>
             <li>
                 <a href="/recipes">${localeEnglish.navigation.recipesLinkText}</a>

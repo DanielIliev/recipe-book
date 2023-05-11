@@ -1,4 +1,4 @@
-import { html } from '../../../node_modules/lit-html/lit-html.js';
+import { html } from 'lit-html';
 import { localeEnglish } from '../data/localization.js';
 
 export const addRecipeTemplate = (onAdd) => html`

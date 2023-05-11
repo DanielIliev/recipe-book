@@ -1,14 +1,17 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config = {
-    entry: './public/src/app.js',
+module.exports = {
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'public/dist'),
-        filename: 'app.js',
-        clean: true
+        filename: 'bundle.js',
     },
-    plugins: [new HtmlWebpackPlugin({title: 'Recipe Book'})],
+    module: {
+        rules: [
+            {
+                test: /\.scss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+        ],
+    },
 };
-
-module.exports = config;
