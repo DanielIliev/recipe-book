@@ -9,14 +9,15 @@
 
     .recipe-content {
         margin-right: auto;
-        justify-content: flex-end;
+        justify-content: center;
         list-style: none;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .recipe-actions {
         a {
             color: #000;
+            text-decoration: none;
             
             img {
                 width: 32px;
