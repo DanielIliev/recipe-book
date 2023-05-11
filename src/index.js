@@ -8,6 +8,8 @@ import { layoutView } from './views/layoutView';
 import { aboutController } from './controllers/about.controller';
 import { addRecipeController } from './controllers/addRecipe.controller';
 import { recipesController } from './controllers/recipes.controller';
+import { editRecipeController } from './controllers/edit.controller';
+import { deleteRecipe } from './data/recipeModel';
 
 const root = document.getElementById('wrapper');
 
@@ -17,6 +19,8 @@ page('/index.html', () => {
 });
 page('/', homeController);
 page('/add', addRecipeController);
+page('/edit/:id', editRecipeController);
+page('/delete/:id', deleteAction);
 page('/recipes', recipesController);
 page('/about', aboutController);
 page('*', (ctx) => {
@@ -33,4 +37,14 @@ function decorator(ctx, next) {
 
 function renderView(content) {
     render(layoutView(content), root);
+}
+
+async function deleteAction(ctx) {
+    const confirmation = confirm('Are you sure you want to delete the recipe?');
+
+    if (confirmation == true) {
+        await deleteRecipe(ctx.params.id);   
+    }
+
+    ctx.page.redirect('/recipes');
 }

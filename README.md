@@ -3,13 +3,13 @@
 
 ## Content
 
-### Home page
+### Landing page
 ### Add recipe page
 ### Recipes page
 ### About page
 
 ## Features
-- Create recipes
+- Create, Edit, Delete recipes
 
 ## Tech Stack
 ### Front-end
@@ -29,7 +29,4 @@
 - Visit https://recipe-book-8c636.web.app/
 
 ## Disclaimers
-- This project is for demonstrational purposes, hence no sensitive information should be uploaded to it
-
-## Future features
-- Edit & delete of a recipe
+- This project is for demonstrational purposes only, hence no sensitive information should be uploaded to it

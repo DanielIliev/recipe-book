@@ -4,11 +4,10 @@ import { localeEnglish } from '../data/localization.js';
 export const recipeBlock = (recipe) => html`
     <div class="recipe-block">
         <div class="recipe-actions">
-            <a class="edit-btn" href="javascript:void(0)">
+            <a class="edit-btn" href="/edit/${recipe._id}">
                 Edit
             </a>
-            <a class="delete-btn" href="javascript:void(0)">
-                <!-- <img src="../images/icons/delete.svg" alt="options" /> -->
+            <a class="delete-btn" href="/delete/${recipe._id}">
                 Delete
             </a>
         </div>

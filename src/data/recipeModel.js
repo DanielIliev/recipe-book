@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { child, get, getDatabase, push, ref, set } from "firebase/database";
+import { child, get, getDatabase, push, ref, remove, set } from "firebase/database";
 import { config } from "../../firebase.config";
 
 const app = initializeApp(config);
@@ -19,29 +19,42 @@ export async function getRecipes() {
     }
 }
 
-// export async function getLatestRecipes() {
-//     return await get(endpoints.latest);
-// }
+export async function getOneRecipe(id) {
+    const database = getDatabase();
+    const data = await get(child(ref(database), endpoints.all + `/${id}`));
 
-// export async function getOneRecipe(id) {
-//     return await get(`${endpoints.byId}?id=${id}`);
-// }
+    if (data.val()) {
+        return data.val();
+    } else {
+        return [];
+    }
+}
 
 export async function addRecipe(data) {
     const database = getDatabase();
     const uid = push(child(ref(database), 'recipes')).key;
 
-    await set(ref(database, 'recipes/' + uid), {
+    await set(ref(database, endpoints.all + `/${uid}`), {
         title: data.title,
         description: data.description,
         _id: uid
     });
 }
 
-// export async function editRecipe(data) {
-//     await put (endpoints.edit, data);
-// }
+export async function editRecipe(data) {
+    const uid = data.id;
+    const database = getDatabase();
 
-// export async function deleteRecipe(id) {
-//     await del(`${endpoints.del}?id=${id}`);
-// }
+    await set(ref(database, endpoints.all + `/${uid}`), {
+        title: data.title,
+        description: data.description,
+        _id: uid
+    });
+}
+
+export async function deleteRecipe(id) {
+    const database = getDatabase();
+    const recordRef = ref(database, endpoints.all + `/${id}`)
+
+    await remove(recordRef);
+}
