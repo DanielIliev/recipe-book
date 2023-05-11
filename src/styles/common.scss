@@ -1,10 +1,8 @@
 .recipe-block {
-    display: flex;
-    flex-direction: row-reverse;
+    width: 100%;
     margin: 16px 8px;
     border: 1px solid #ccc;
     border-radius: 1%;
-    padding: 8px;
     background-color: #ddd;
 
     .recipe-content {
@@ -12,16 +10,18 @@
         justify-content: center;
         list-style: none;
         align-items: flex-start;
+        padding: 0px 8px;
     }
 
     .recipe-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+        background-color: #BBB;
+        padding: 8px;
         a {
             color: #000;
             text-decoration: none;
-            
-            img {
-                width: 32px;
-            }
         }
     }
 }

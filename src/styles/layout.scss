@@ -1,14 +1,17 @@
+$primary-color: #a0744f;
+$secondary-color: #ffffff;
+
 main {
     padding: 32px;
-    background-color: #fff;
+    background-color: $secondary-color;
     opacity: 0.75;
 }
 
 nav {
     position: sticky;
     top: 0;
-    background-color: #a0744f;
-    color: #fff;
+    background-color: $primary-color;
+    color: $secondary-color;
     font-size: 24px;
     font-weight: 600;
     width: 100%;
@@ -30,7 +33,7 @@ nav {
 
             a {
                 transition: all ease 0.3s 0s;
-                color: #fff;
+                color: $secondary-color;
                 text-decoration: none;
         
                 &:hover {
@@ -44,7 +47,7 @@ nav {
         margin-right: auto;
         transition: color ease 0.3s 0s;
         text-decoration: none;
-        color: #fff;
+        color: $secondary-color;
 
         &:hover {
             cursor: pointer;
