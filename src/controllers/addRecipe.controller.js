@@ -1,6 +1,6 @@
 import { addRecipeTemplate } from "../views/addRecipeView.js";
-import { createSubmitHandler } from "../data/util.js";
-import { addRecipe } from "../data/recipeModel.js";
+import { createSubmitHandler } from "../utils/util.js";
+import { db } from "../database/recipeModel.js";
 
 export function addRecipeController(ctx) {
     ctx.render(addRecipeTemplate(createSubmitHandler(onAdd)));
@@ -13,7 +13,7 @@ export function addRecipeController(ctx) {
             return alert('All fields are required');
         }
 
-        await addRecipe({ title, description });
+        await db.addRecipe({ title, description });
 
         form.reset();
         ctx.page.redirect('/recipes');

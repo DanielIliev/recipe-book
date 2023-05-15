@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import { localeEnglish } from '../data/localization.js';
+import { localeEnglish } from '../localizations/localization.js';
 
 export const aboutTemplate = () => html`
     <h1>${localeEnglish.about.title}</h1>

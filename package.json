@@ -21,6 +21,7 @@
   "dependencies": {
     "firebase": "^9.21.0",
     "lit-html": "^2.7.3",
-    "page": "^1.11.6"
+    "page": "^1.11.6",
+    "phosphor-icons": "^1.4.2"
   }
 }

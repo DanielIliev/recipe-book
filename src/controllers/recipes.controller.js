@@ -1,8 +1,14 @@
-import { getRecipes } from "../data/recipeModel.js";
+import { db } from "../database/recipeModel.js";
 import { recipesTemplate } from "../views/recipesView.js";
 
 export async function recipesController(ctx) {
-    const recipes = await getRecipes();
+    let recipes = await db.getRecipes();
+
+    if (recipes) {
+        recipes = Object.values(recipes);
+    } else {
+        recipes = [];
+    }
 
     ctx.render(recipesTemplate(recipes));
 }

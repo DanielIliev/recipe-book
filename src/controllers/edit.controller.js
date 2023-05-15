@@ -1,10 +1,10 @@
-import { editRecipe, getOneRecipe } from "../data/recipeModel.js";
-import { createSubmitHandler } from "../data/util.js";
+import { db } from "../database/recipeModel.js";
+import { createSubmitHandler } from "../utils/util.js";
 import { editRecipeTemplate } from "../views/editView.js";
 
 export async function editRecipeController(ctx) {
     const ID = ctx.params.id;
-    const DATA  = await getOneRecipe(ID);
+    const DATA  = await db.getOneRecipe(ID);
 
     ctx.render(editRecipeTemplate(DATA, createSubmitHandler(onEdit)));
 
@@ -19,7 +19,7 @@ export async function editRecipeController(ctx) {
         const confirmation = confirm('Are you sure?');
 
         if (confirmation == true) {
-            await editRecipe({'id': ID, title, description});
+            await db.editRecipe({'id': ID, title, description});
             form.reset();
             ctx.page.redirect('/recipes');
         }
