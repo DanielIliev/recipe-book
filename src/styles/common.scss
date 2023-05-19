@@ -4,23 +4,28 @@
     border: 1px solid #ccc;
     border-radius: 1%;
     background-color: #ddd;
+    overflow: hidden;
 
     .recipe-content {
-        margin-right: auto;
-        justify-content: center;
-        list-style: none;
-        align-items: flex-start;
-        padding: 0px 8px;
+        padding: 4px 24px;
         color: #000;
         word-wrap: break-word;
     }
 
-    .recipe-header {
+    .recipe-header,
+    .recipe-footer {
         display: flex;
+        flex-flow: row wrap;
         justify-content: flex-end;
+        align-items: baseline;
         gap: 16px;
         background-color: #BBB;
-        padding: 8px;
+        padding: 2px 16px;
+        word-wrap: break-word;
+
+        h2 {
+            margin-right: auto;
+        }
 
         a {
             color: #000;
@@ -34,10 +39,29 @@
     }
 }
 
-.form.container {
-    label {
-        display: block;
-        margin: 8px 4px;
+.form-container {
+    form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        input {
+            width: 100%;
+            height: 32px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 64px;
+        }
+
+        fieldset {
+            width: 75%;
+        }
+        label {
+            display: block;
+            margin: 8px 4px;
+        }
     }
 }
 

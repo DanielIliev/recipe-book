@@ -14,14 +14,10 @@ const localeEnglish = {
         title: 'These are the available recipes',
         noRecipes: 'There are no recipes :('
     },
-    addRecipe: {
+    formFields: {
         title: 'Title:',
         description: 'Description:',
-        publish: 'Publish'
-    },
-    editRecipe: {
-        title: 'Title:',
-        description: 'Description:',
+        publish: 'Publish',
         edit: 'Edit'
     },
     recipeBlock: {

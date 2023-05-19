@@ -1,4 +1,4 @@
-import { child, get, getDatabase, push, ref, remove, set } from "firebase/database";
+import { child, get, getDatabase, onValue, orderByChild, orderByKey, push, query, ref, remove, set } from "firebase/database";
 import { initializeApp } from 'firebase/app';
 import { config } from "../../firebase.config.js";
 
@@ -10,7 +10,7 @@ class DatabaseActions {
         all: '/recipes'
     }
 
-    constructor() {}
+    constructor() { }
 
     async getRecipes() {
         const database = getDatabase();
@@ -29,11 +29,20 @@ class DatabaseActions {
     async addRecipe(data) {
         const database = getDatabase();
         const uid = push(child(ref(database), 'recipes')).key;
+        const currentDate = new Date();
+        const createdOn =
+            `${currentDate.getDate()}-
+            ${currentDate.getMonth() + 1}-
+            ${currentDate.getFullYear()} at 
+            ${currentDate.getHours()}:
+            ${(currentDate.getMinutes() < 10 ? '0' : '') + currentDate.getMinutes()}:
+            ${currentDate.getSeconds()}`;
 
         await set(ref(database, this.endpoints.all + `/${uid}`), {
             title: data.title,
             description: data.description,
-            _id: uid
+            _id: uid,
+            createdOn
         });
     }
 

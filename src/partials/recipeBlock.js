@@ -3,6 +3,7 @@ import { html } from 'lit-html';
 export const recipeBlock = (recipe) => html`
     <div class="recipe-block">
         <div class="recipe-header">
+            <h2>${recipe.title}</h2>
             <a href="/edit/${recipe._id}">
                 <i class="ph-light ph-pencil-simple-line"></i>
             </a>
@@ -11,8 +12,10 @@ export const recipeBlock = (recipe) => html`
             </a>
         </div>
         <div class="recipe-content">
-            <h1>${recipe.title}</h1>
             <p>${recipe.description}</p>
+        </div>
+        <div class="recipe-footer">
+            <small>Created on: ${recipe.createdOn}</small>
         </div>
     </div>
 `;
