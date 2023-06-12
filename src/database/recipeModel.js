@@ -15,7 +15,7 @@ class DatabaseActions {
     async getRecipes() {
         const database = getDatabase();
         const data = await get(child(ref(database), this.endpoints.all));
-
+        console.log(data.val());
         return data.val();
     }
 
@@ -49,11 +49,20 @@ class DatabaseActions {
     async editRecipe(data) {
         const database = getDatabase();
         const uid = data.id;
+        const currentDate = new Date();
+        const createdOn =
+            `${currentDate.getDate()}-
+            ${currentDate.getMonth() + 1}-
+            ${currentDate.getFullYear()} at 
+            ${currentDate.getHours()}:
+            ${(currentDate.getMinutes() < 10 ? '0' : '') + currentDate.getMinutes()}:
+            ${currentDate.getSeconds()}`;
 
         await set(ref(database, this.endpoints.all + `/${uid}`), {
             title: data.title,
             description: data.description,
-            _id: uid
+            _id: uid,
+            createdOn
         });
     }
 
