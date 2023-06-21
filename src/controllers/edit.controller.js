@@ -1,4 +1,4 @@
-import { db } from "../database/recipeModel.js";
+import { db } from "../database/recipeService.js";
 import { createSubmitHandler } from "../utils/util.js";
 import { editRecipeTemplate } from "../views/editView.js";
 

@@ -1,4 +1,4 @@
-import { db } from "../database/recipeModel.js";
+import { db } from "../database/recipeService.js";
 import { recipesTemplate } from "../views/recipesView.js";
 
 export async function recipesController(ctx) {

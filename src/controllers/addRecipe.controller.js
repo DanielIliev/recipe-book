@@ -1,6 +1,6 @@
 import { addRecipeTemplate } from "../views/addRecipeView.js";
 import { createSubmitHandler } from "../utils/util.js";
-import { db } from "../database/recipeModel.js";
+import { db } from "../database/recipeService.js";
 
 export function addRecipeController(ctx) {
     ctx.render(addRecipeTemplate(createSubmitHandler(onAdd)));

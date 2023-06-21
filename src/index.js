@@ -10,7 +10,7 @@ import { aboutController } from './controllers/about.controller.js';
 import { addRecipeController } from './controllers/addRecipe.controller.js';
 import { recipesController } from './controllers/recipes.controller.js';
 import { editRecipeController } from './controllers/edit.controller.js';
-import { db } from './database/recipeModel.js';
+import { db } from './database/recipeService.js';
 
 const root = document.getElementById('wrapper');
 

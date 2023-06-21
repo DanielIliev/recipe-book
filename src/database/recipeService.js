@@ -1,4 +1,4 @@
-import { child, get, getDatabase, onValue, orderByChild, orderByKey, push, query, ref, remove, set } from "firebase/database";
+import { child, get, getDatabase, push, ref, remove, set } from "firebase/database";
 import { initializeApp } from 'firebase/app';
 import { config } from "../../firebase.config.js";
 
