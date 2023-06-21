@@ -10,7 +10,6 @@ import { aboutController } from './controllers/about.controller.js';
 import { addRecipeController } from './controllers/addRecipe.controller.js';
 import { recipesController } from './controllers/recipes.controller.js';
 import { editRecipeController } from './controllers/edit.controller.js';
-import { db } from './database/recipeService.js';
 
 const root = document.getElementById('wrapper');
 
@@ -44,7 +43,7 @@ async function deleteAction(ctx) {
     const confirmation = confirm('Are you sure you want to delete the recipe?');
 
     if (confirmation == true) {
-        await db.deleteRecipe(ctx.params.id);   
+        await deleteRecipe(ctx.params.id);   
     }
 
     ctx.page.redirect('/recipes');

@@ -1,4 +1,4 @@
-import { db } from "../database/recipeService.js";
+import { editRecipe } from "../services/recipeService.js";
 import { createSubmitHandler } from "../utils/util.js";
 import { editRecipeTemplate } from "../views/editView.js";
 
@@ -19,7 +19,7 @@ export async function editRecipeController(ctx) {
         const confirmation = confirm('Are you sure?');
 
         if (confirmation == true) {
-            await db.editRecipe({'id': ID, title, description});
+            await editRecipe({'id': ID, title, description});
             form.reset();
             ctx.page.redirect('/recipes');
         }

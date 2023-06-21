@@ -1,14 +1,10 @@
-import { db } from "../database/recipeService.js";
+import { getRecipes } from "../services/recipeService.js";
 import { recipesTemplate } from "../views/recipesView.js";
 
 export async function recipesController(ctx) {
-    let recipes = await db.getRecipes();
+    let recipes = await getRecipes();
 
-    if (recipes) {
-        recipes = Object.values(recipes);
-    } else {
-        recipes = [];
-    }
+    console.log(recipes);
 
     ctx.render(recipesTemplate(recipes));
 }
