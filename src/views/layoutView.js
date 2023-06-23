@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { localeEnglish } from '../localizations/localization.js';
 
 export const layoutView = (content) => html`
-    <nav>
+    <nav aria-label="primary menu" role="navigation">
         <a href="/" id="brand">${localeEnglish.navigation.logoLinkText}</a>
         <ul>
             <li>
@@ -26,5 +26,5 @@ export const layoutView = (content) => html`
         </ul>
     </nav>
 
-    <main>${content}</main>
+    ${content}
 `;

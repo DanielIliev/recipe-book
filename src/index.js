@@ -1,7 +1,13 @@
+// SCSS files
 import './styles/main.scss';
 import './styles/layout.scss';
-import './styles/common.scss';
+import './styles/recipes.scss';
+import './styles/formStyling.scss';
+
+// Custom libs
 import 'phosphor-icons';
+
+// Routing and functionality
 import page from 'page';
 import { render } from 'lit-html';
 import { homeController } from './controllers/home.controller.js';
@@ -10,6 +16,7 @@ import { aboutController } from './controllers/about.controller.js';
 import { addRecipeController } from './controllers/addRecipe.controller.js';
 import { recipesController } from './controllers/recipes.controller.js';
 import { editRecipeController } from './controllers/edit.controller.js';
+import { deleteRecipe } from './services/recipeService.js';
 
 const root = document.getElementById('wrapper');
 
@@ -43,7 +50,7 @@ async function deleteAction(ctx) {
     const confirmation = confirm('Are you sure you want to delete the recipe?');
 
     if (confirmation == true) {
-        await deleteRecipe(ctx.params.id);   
+        await deleteRecipe(ctx.params.id);
     }
 
     ctx.page.redirect('/recipes');

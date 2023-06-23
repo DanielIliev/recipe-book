@@ -11,14 +11,15 @@ const localeEnglish = {
         description: 'This application can be used to add, edit or delete recipe records.',
     },
     recipes: {
-        title: 'These are the available recipes',
-        noRecipes: 'There are no recipes :('
+        empty: 'These are no recipes available',
     },
     formFields: {
-        title: 'Title:',
-        description: 'Description:',
+        title: 'Title',
+        description: 'Description',
+        image: 'Recipe image (optional)',
         publish: 'Publish',
-        edit: 'Edit'
+        edit: 'Edit',
+        cancel: 'Cancel'
     },
     recipeBlock: {
         title: 'Title:',

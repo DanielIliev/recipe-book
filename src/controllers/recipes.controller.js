@@ -2,9 +2,12 @@ import { getRecipes } from "../services/recipeService.js";
 import { recipesTemplate } from "../views/recipesView.js";
 
 export async function recipesController(ctx) {
-    let recipes = await getRecipes();
+    try {
+        const recipes = await getRecipes();
 
-    console.log(recipes);
-
-    ctx.render(recipesTemplate(recipes));
+        return ctx.render(recipesTemplate(recipes));
+    } catch (error) {
+        console.log(error.message);
+        return ctx.page.redirect('/');
+    }
 }

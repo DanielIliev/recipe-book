@@ -1,27 +1,30 @@
-import { editRecipe } from "../services/recipeService.js";
+import { editRecipe, getOneRecipe } from "../services/recipeService.js";
 import { createSubmitHandler } from "../utils/util.js";
 import { editRecipeTemplate } from "../views/editView.js";
 
 export async function editRecipeController(ctx) {
     const ID = ctx.params.id;
-    const DATA  = await db.getOneRecipe(ID);
+    const DATA = await getOneRecipe(ID);
 
     ctx.render(editRecipeTemplate(DATA, createSubmitHandler(onEdit)));
 
     async function onEdit({
         title,
-        description
+        description,
+        imageUrl
     }, form) {
-        if (title == '' || description == '') {
-            return alert('All fields are required');
-        }
-
-        const confirmation = confirm('Are you sure?');
-
-        if (confirmation == true) {
-            await editRecipe({'id': ID, title, description});
+        try {
+            await editRecipe({ 'id': ID, title, description, imageUrl });
             form.reset();
             ctx.page.redirect('/recipes');
+        } catch (error) {
+            return alert(error.message);
         }
     }
+
+    document.getElementById('cancel').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        ctx.page.redirect('/recipes');
+    })
 }

@@ -7,15 +7,16 @@ export function addRecipeController(ctx) {
 
     async function onAdd({
         title,
-        description
+        description,
+        imageUrl
     }, form) {
-        if (title == '' || description == '') {
-            return alert('All fields are required');
+        try {
+            await addRecipe({ title, description, imageUrl });
+
+            form.reset();
+            ctx.page.redirect('/recipes');
+        } catch (error) {
+            return alert(error.message);
         }
-
-        await addRecipe({ title, description });
-
-        form.reset();
-        ctx.page.redirect('/recipes');
     }
 }

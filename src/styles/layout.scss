@@ -1,10 +1,10 @@
-$primary-color: #a0744f;
+$primary-color: #a9694d;
 $secondary-color: #ffffff;
+$accent-color: #dddddd;
 
-main {
-    padding: 32px;
+section {
     background-color: $secondary-color;
-    opacity: 0.75;
+    padding: 24px 16px;
 }
 
 nav {
@@ -36,7 +36,7 @@ nav {
                 text-decoration: none;
         
                 &:hover {
-                    color: #ddd;
+                    color: $accent-color;
                 }
             }
         }
@@ -50,7 +50,7 @@ nav {
 
         &:hover {
             cursor: pointer;
-            color: #ddd;
+            color: $accent-color;
         }
     }
 }
