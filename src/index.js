@@ -1,8 +1,8 @@
 // SCSS files
 import './styles/main.scss';
-import './styles/layout.scss';
 import './styles/recipes.scss';
 import './styles/formStyling.scss';
+import './styles/navigation.scss';
 
 // Custom libs
 import 'phosphor-icons';

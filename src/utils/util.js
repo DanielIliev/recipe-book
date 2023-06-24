@@ -9,3 +9,8 @@ export function createSubmitHandler(callback) {
         callback(data, form);
     }
 }
+
+export function navTrigger() {
+    document.querySelector('.nav-menu').classList.toggle('show');
+    document.querySelector('.hamburger').classList.toggle('active');
+}

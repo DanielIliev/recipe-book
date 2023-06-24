@@ -15,6 +15,11 @@
 
         fieldset {
             width: 75%;
+            background-color: #eee;
+
+            legend {
+                font-weight: 600;
+            }
         }
 
         label {

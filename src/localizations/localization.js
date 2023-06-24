@@ -1,7 +1,6 @@
 const localeEnglish = {
     navigation: {
         logoLinkText: 'RecipeBook',
-        homeLinkText: 'Home',
         addLinkText: 'Add recipe',
         recipesLinkText: 'Recipes',
         aboutLinkText: 'About'
