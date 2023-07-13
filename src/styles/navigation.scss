@@ -104,6 +104,11 @@ nav {
         }
     }
 
+    section.show {
+        transform: translateY(200px);
+        transition: transform ease-in-out 0.5s;
+    }
+
     .hamburger {
         display: block;
 
