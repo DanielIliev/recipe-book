@@ -11,11 +11,5 @@ export function createSubmitHandler(callback) {
 }
 
 export function navTrigger() {
-    const nav = document.querySelector('.nav-menu');
-    const hamburger = document.querySelector('.hamburger');
-    const content = document.querySelector('section');
-
-    nav.classList.toggle('show');
-    hamburger.classList.toggle('show');
-    content.classList.toggle('show');
+    
 }

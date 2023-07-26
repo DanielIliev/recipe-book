@@ -10,15 +10,14 @@ body {
     font-family: "Verdana", sans-serif;
 }
 
-section {
-    padding: 115px 16px;
-    transition: 0.5s ease-in-out;
-}
-
 a {
     text-decoration: none;
 }
 
 li {
     list-style-type: none;
+}
+
+#content-holder {
+    margin-top: 32px;
 }
