@@ -4,13 +4,13 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'public/dist'),
         filename: 'bundle.js',
+        path: path.resolve(__dirname, 'public/dist'),
     },
     module: {
         rules: [
             {
-                test: /\.scss$/i,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
                     {
                         loader: 'style-loader'
@@ -19,11 +19,21 @@ module.exports = {
                         loader: 'css-loader'
                     },
                     {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: () => [
+                                    require('autoprefixer')
+                                ]
+                            }
+                        }
+                    },
+                    {
                         loader: 'sass-loader'
                     }
                 ]
             }
-        ],
+        ]
     },
     watch: true
 };

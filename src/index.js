@@ -3,6 +3,7 @@ import './styles/main.scss';
 import './styles/recipes.scss';
 import './styles/formStyling.scss';
 import './styles/navigation.scss';
+import 'bootstrap';
 
 // Custom libs
 import 'phosphor-icons';

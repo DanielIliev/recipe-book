@@ -10,9 +10,29 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-        ],
-    }
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: () => [
+                                    require('autoprefixer')
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            }
+        ]
+    },
 };
