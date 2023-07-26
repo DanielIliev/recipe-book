@@ -5,9 +5,6 @@ import './styles/formStyling.scss';
 import './styles/navigation.scss';
 import 'bootstrap';
 
-// Custom libs
-import 'phosphor-icons';
-
 // Routing and functionality
 import page from 'page';
 import { render } from 'lit-html';

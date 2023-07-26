@@ -1,7 +1,23 @@
 import { html } from 'lit-html';
+import Image from '../images/defaultRecipeImage.jpg';
+
+const defaultImageUrl = Image;
 
 export const recipeBlock = (recipe) => html`
-    <div class="recipe-block">
+    <div class="card">
+        ${!recipe.imageUrl ? 
+            html`<img class="card-img-top" src="${defaultImageUrl}" alt="Card image cap">` :
+            html`<img class="card-img-top" src="${recipe.imageUrl}" alt="Card image cap">`
+        }
+        <div class="card-body">
+            <h5 class="card-title">${recipe.title}</h5>
+            <p class="card-text">${recipe.description}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+`;
+
+{/* <div class="recipe-block">
         ${!recipe.imageUrl ? 
             html`<div class="default-recipe-image"></div>` :
             html`<img class="recipe-image" src="${recipe.imageUrl}" alt="recipe image" />`
@@ -23,5 +39,4 @@ export const recipeBlock = (recipe) => html`
         <div class="recipe-footer">
            <small>Created on: ${recipe.createdOn}</small>
         </div>
-    </div>
-`;
+    </div> */}
