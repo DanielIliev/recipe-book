@@ -16,3 +16,13 @@ $accent-color: #000000;
         transition: 0.3s;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .navbar-nav {
+        display: flex;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

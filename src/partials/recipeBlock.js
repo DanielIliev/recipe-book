@@ -12,7 +12,10 @@ export const recipeBlock = (recipe) => html`
         <div class="card-body">
             <h5 class="card-title">${recipe.title}</h5>
             <p class="card-text">${recipe.description}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-body card-actions">
+            <small>Created on: ${recipe.createdOn}</small>
+            <a href="#" class="btn btn-primary float-end">Go somewhere</a>
         </div>
     </div>
 `;
