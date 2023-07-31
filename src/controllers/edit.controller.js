@@ -3,7 +3,7 @@ import { createSubmitHandler } from "../utils/util.js";
 import { editRecipeTemplate } from "../views/editView.js";
 
 export async function editRecipeController(ctx) {
-    // Need to error handle invalid ID's for recipes
+    
     try {
         const ID = ctx.params.id;
         const data = await getOneRecipe(ID);
