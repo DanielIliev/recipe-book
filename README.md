@@ -1,32 +1,32 @@
 # Recipe Book
-- JavaScript SPA simulation of a recipe book
+    JavaScript Single Page Application of a recipe book
 
 ## Project URL
-- Visit https://recipe-book-8c636.web.app/
+    https://recipe-book-8c636.web.app/
 
 ## Content
-
-### Landing page
-### Add recipe page
-### Recipes page
-### About page
+    Landing page
+    Add recipe page
+    Recipes page
+    About page
 
 ## Features
-- Create, Edit, Delete recipes
+    Create, Read, Update, Delete recipes
 
 ## Tech Stack
 ### Front-end
-- HTML5
-- SCSS
-- Page JS
-- Lit-html
+    HTML5
+    SCSS
+    Bootstrap
+    Page JS
+    Lit-html
 
 ### Back-end
-- Firebase hosting
-- Firebase Realtime Database
+    Firebase hosting
+    Firebase Realtime Database
 
 ### Additional
-- All development dependencies are listed in the package.json file
+    All development dependencies are listed in the package.json file
 
 ## Disclaimers
-- This project is for demonstrational purposes only, hence no sensitive information should be uploaded to it
+    This project is for demonstrational purposes only, hence no sensitive information should be uploaded to it
