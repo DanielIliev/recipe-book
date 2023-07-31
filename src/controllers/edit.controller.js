@@ -38,6 +38,8 @@ export async function editRecipeController(ctx) {
     
         if (confirmation == true) {
             await deleteRecipe(ID);
+
+            ctx.page.redirect('/recipes');
         }
     }
 }
