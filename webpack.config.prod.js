@@ -4,8 +4,8 @@ module.exports = {
     mode: 'production',
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'public/dist'),
         filename: 'bundle.js',
+        path: path.resolve(__dirname, 'public/dist'),
     },
     module: {
         rules: [
@@ -32,7 +32,11 @@ module.exports = {
                         loader: 'sass-loader'
                     }
                 ]
-            }
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ]
     },
 };

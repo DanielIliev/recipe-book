@@ -4,7 +4,7 @@ import { recipeBlock } from '../partials/recipeBlock.js';
 
 export const recipesTemplate = (recipes) => html`
     <section id="recipes">
-    ${(recipes.length === 0) ? 
+    ${(recipes.length === 0) ?
         html`
             <h2>${localeEnglish.recipes.empty}</h2>
         ` :

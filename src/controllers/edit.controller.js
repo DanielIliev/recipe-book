@@ -3,10 +3,21 @@ import { createSubmitHandler } from "../utils/util.js";
 import { editRecipeTemplate } from "../views/editView.js";
 
 export async function editRecipeController(ctx) {
-    const ID = ctx.params.id;
-    const DATA = await getOneRecipe(ID);
+    // Need to error handle invalid ID's for recipes
+    try {
+        const ID = ctx.params.id;
+        const data = await getOneRecipe(ID);
 
-    ctx.render(editRecipeTemplate(DATA, createSubmitHandler(onEdit)));
+        ctx.render(editRecipeTemplate(data, createSubmitHandler(onEdit)));
+
+        document.getElementById('cancel').addEventListener('click', function(event) {
+            event.preventDefault();
+    
+            ctx.page.redirect('/recipes');
+        });
+    } catch (error) {
+        ctx.page.redirect('/');
+    }
 
     async function onEdit({
         title,
@@ -21,10 +32,4 @@ export async function editRecipeController(ctx) {
             return alert(error.message);
         }
     }
-
-    document.getElementById('cancel').addEventListener('click', function(event) {
-        event.preventDefault();
-
-        ctx.page.redirect('/recipes');
-    })
 }

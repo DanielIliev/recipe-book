@@ -13,33 +13,9 @@ export const recipeBlock = (recipe) => html`
             <h5 class="card-title">${recipe.title}</h5>
             <p class="card-text">${recipe.description}</p>
         </div>
-        <div class="card-body card-actions">
+        <div class="card-footer card-actions">
             <small>Created on: ${recipe.createdOn}</small>
-            <a href="#" class="btn btn-primary float-end">Go somewhere</a>
+            <a href="/edit/${recipe._id}" class="btn btn-primary float-end">Edit</a>
         </div>
     </div>
 `;
-
-{/* <div class="recipe-block">
-        ${!recipe.imageUrl ? 
-            html`<div class="default-recipe-image"></div>` :
-            html`<img class="recipe-image" src="${recipe.imageUrl}" alt="recipe image" />`
-        }
-        <div class="recipe-header">
-             <h2>${recipe.title}</h2>
-             <a href="/edit/${recipe._id}">
-                 <i class="ph-light ph-pencil-simple-line"></i>
-             </a>
-             <a href="/delete/${recipe._id}">
-                 <i class="ph-light ph-trash"></i>
-             </a>
-        </div>
-        <hr>
-        <div class="recipe-content">
-            <p>${recipe.description}</p>
-        </div>
-        <hr>
-        <div class="recipe-footer">
-           <small>Created on: ${recipe.createdOn}</small>
-        </div>
-    </div> */}

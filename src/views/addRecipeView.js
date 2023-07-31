@@ -8,7 +8,7 @@ export const addRecipeTemplate = (onAdd) => html`
                 <legend>Recipe information</legend>
                 <div class="mb-3">
                     <label for="title" class="form-label">${localeEnglish.formFields.title}</label>
-                    <input type="text" class="form-control" id="title" name="title" maxlength="25" placeholder="Recipe title...">
+                    <input type="text" class="form-control" id="title" name="title" maxlength="25" placeholder="Recipe title..." />
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">${localeEnglish.formFields.description}</label>
