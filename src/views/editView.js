@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import { localeEnglish } from '../localizations/localization.js';
 
-export const editRecipeTemplate = (recipe, onEdit) => html`
+export const editRecipeTemplate = (recipe, onEdit, deleteAction) => html`
     <div class="container">
         <form @submit="${onEdit}" class="form">
             <fieldset>
@@ -21,6 +21,7 @@ export const editRecipeTemplate = (recipe, onEdit) => html`
             </fieldset>
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary float-end">Edit</button>
+                <button type="button" class="btn btn-danger float-end" @click="${deleteAction}">Delete</button>
                 <button type="button" class="btn btn-primary float-end" id="cancel">${localeEnglish.formFields.cancel}</button>
             </div>
         </form>

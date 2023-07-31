@@ -15,7 +15,7 @@ const localeEnglish = {
     formFields: {
         title: 'Title',
         description: 'Description',
-        image: 'Recipe image (optional)',
+        image: 'Image URL (optional)',
         publish: 'Publish',
         edit: 'Edit',
         cancel: 'Cancel'

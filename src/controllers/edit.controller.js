@@ -1,14 +1,14 @@
-import { editRecipe, getOneRecipe } from "../services/recipeService.js";
+import { editRecipe, getOneRecipe, deleteRecipe } from "../services/recipeService.js";
 import { createSubmitHandler } from "../utils/util.js";
 import { editRecipeTemplate } from "../views/editView.js";
 
 export async function editRecipeController(ctx) {
-    
+    const ID = ctx.params.id;
+
     try {
-        const ID = ctx.params.id;
         const data = await getOneRecipe(ID);
 
-        ctx.render(editRecipeTemplate(data, createSubmitHandler(onEdit)));
+        ctx.render(editRecipeTemplate(data, createSubmitHandler(onEdit), deleteAction));
 
         document.getElementById('cancel').addEventListener('click', function(event) {
             event.preventDefault();
@@ -30,6 +30,14 @@ export async function editRecipeController(ctx) {
             ctx.page.redirect('/recipes');
         } catch (error) {
             return alert(error.message);
+        }
+    }
+
+    async function deleteAction() {
+        const confirmation = confirm('Are you sure you want to delete the recipe?');
+    
+        if (confirmation == true) {
+            await deleteRecipe(ID);
         }
     }
 }

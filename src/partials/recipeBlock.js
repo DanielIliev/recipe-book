@@ -6,8 +6,8 @@ const defaultImageUrl = Image;
 export const recipeBlock = (recipe) => html`
     <div class="card">
         ${!recipe.imageUrl ? 
-            html`<img class="card-img-top" src="${defaultImageUrl}" alt="Card image cap">` :
-            html`<img class="card-img-top" src="${recipe.imageUrl}" alt="Card image cap">`
+            html`<img class="card-img-top" src="${defaultImageUrl}" alt="Recipe image">` :
+            html`<img class="card-img-top" src="${recipe.imageUrl}" alt="Recipe image">`
         }
         <div class="card-body">
             <h5 class="card-title">${recipe.title}</h5>

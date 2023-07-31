@@ -83,16 +83,20 @@ function generateDate() {
 }
 
 function validateInputs(title, description, imageUrl) {
-    if (title == '' || description == '') {
-        throw new Error('All fields are required');
+    if (title == '') {
+        throw new Error('Title field is required!');
+    }
+
+    if (description == '') {
+        throw new Error('Description field is required!');
     }
 
     if (title.length > 25) {
-        throw new Error('Title must be a maximum of 25 characters');
+        throw new Error('Title must be a maximum of 25 characters!');
     }
 
     if (description.length > 300) {
-        throw new Error('Description must be a maximum of 300 characters');
+        throw new Error('Description must be a maximum of 300 characters!');
     }
 
     if (imageUrl) {

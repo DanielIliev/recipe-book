@@ -7,7 +7,6 @@ export async function recipesController(ctx) {
 
         return ctx.render(recipesTemplate(recipes));
     } catch (error) {
-        console.log(error.message);
         return ctx.page.redirect('/');
     }
 }
